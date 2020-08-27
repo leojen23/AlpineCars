@@ -1,30 +1,59 @@
-import React, { Component } from 'react';
-import Header from './Components/Header'
+import React from 'react';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css'; 
-import VersionCard from './Components/VersionCard';
-import {useSelector} from 'react-redux';
+import {BrowserRouter as Router,Switch,Route,Link} from "react-router-dom";
 
-const App = (props) => {
-const cars = useSelector((state)=>state.cars)
-    
+import VersionPage from './Components/VersionPage';
+import ColorPage from './Components/ColorPage';
+import WheelPage from './Components/WheelPage';
+import SelleriePage from './Components/SelleriePage';
+import EquipementPage from './Components/EquipementPage';
+import AccessoiresPage from './Components/Accessoires';
+import RecapPage from './Components/RecapPage';
+
+
+
+const App = () => {
+
 return (
-      <div className="App">
-       <Header />
-          <div className="container-fluid">
-            <div className="row">
-              <div className="col-6">
- 
-                <VersionCard cars={props.cars}/>
-              </div>
-              <div className="col-6">
-                <VersionCard />
-              </div>
-            </div>
-          </div>
-        </div>
+
+  <Router>
+    <div className='App'>
+    
+      <Switch>
+
+        <Route path="/VersionPage">
+          <VersionPage />
+        </Route>
+
+        <Route path="/ColorPage">
+          <ColorPage />
+        </Route>
+
+        <Route path="/WheelPage">
+          <WheelPage />
+        </Route>
+
+        <Route path="/SelleriePage">
+          <SelleriePage />
+        </Route>
+
+        <Route path="/EquipementPage">
+          <EquipementPage />
+        </Route>
+
+        <Route path="/AccessoiresPage">
+          <AccessoiresPage />
+        </Route>
+
+        <Route path="/RecapPage">
+          <RecapPage />
+        </Route>
+
+      </Switch>
+    </div>
+
+  </Router>
     );
-  
 }
 
 export default App;

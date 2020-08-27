@@ -1,24 +1,22 @@
 import React from 'react';
-import test from '../images/configurateur/modele/selection/legende.png';
 import Card from 'react-bootstrap/Card';
-import {useSelector} from 'react-redux';
+
 
 const VersionCard = (props) => {
-const cars = useSelector((state)=>state.cars) 
-/* console.log */
+
     return (
         
-    <div>
-           <Card className="versionCard">
-             <Card.Img variant="top" src={test} />
-             <Card.Body>
-               <Card.Text>
-                 Name : {cars[1].version } 
-                 {/* Price : {.cars.price} */}
-               </Card.Text>
-             </Card.Body>
-           </Card>
-           </div>
+        <Card className= 'versionCard animate__animated animate__fadeIn animate__slower	3s' >
+          <Card.Img variant="top" src ={props.version.initialPicture}/>
+          <Card.Body>
+            <Card.Text>
+              <h3>{props.version.name } </h3>
+              <span>{props.version.initialPrice } - Euros</span>
+            </Card.Text>
+          </Card.Body>
+        </Card>
+      
     )
 }
+
 export default VersionCard
