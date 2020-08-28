@@ -7,7 +7,7 @@ const PreviousButton= (props) => {
     return (
         
         <div className='previousButton col-1 animate__animated animate__slideInRight'>
-            <Link to={props.previousPath} >vers <span>{props.step}</span></Link>
+            <Link to={props.previousPath} >vers <span>{props.previousPageName}</span></Link>
         </div>
         
     )

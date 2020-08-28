@@ -44,7 +44,13 @@ const VersionPage = (props) => {
        
 
             <div className='footer'>
-                <Footer version={versions} step={steps.color} previousPath={paths[0]} nextPath={paths[2]} price={prices.legende}/>
+                <Footer version={versions} 
+                step={steps.landing} 
+                previousPath={paths[0]} 
+                nextPath={paths[2]} 
+                price={prices.legende}
+                previousPageName={steps.landing}
+                nextPageName={steps.color}/>
             </div>
 
         

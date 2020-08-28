@@ -10,6 +10,7 @@ import Carouselo from './Carousel';
 
 
 
+
 const ColorPage = () => {
 
     const colors = useSelector((state) => state.colorPanel)
@@ -18,6 +19,7 @@ const ColorPage = () => {
     const steps = useSelector((state)=>state.step) 
     const paths = useSelector((state)=>state.paths) 
     const carouselImages = useSelector((state)=>state.carouselImage)
+    const prices = useSelector((state) => state.price)
   
 
     const displayColorSelectionCards = () => {
@@ -38,18 +40,21 @@ const ColorPage = () => {
             <div id='DesignCarousel' className=''>
                 <Carouselo version={versions} carouselImages = {carouselImages} />
             </div>
-            
-            {/* <Row className='DesignCarousel'>
-
-            </Row> */}
-            
-            
+             
             <Row className='SelectionPanel'>
                 {displayColorSelectionCards()}
             </Row>
 
             <div className='footer'>
-                <Footer version={versions} step={steps.color} previousPath={paths[1]} nextPath={paths[3]}/>
+                <Footer 
+                version={versions} 
+                step={steps.color} 
+                previousPath={paths[1]} 
+                nextPath={paths[3]}
+                previousPageName={steps.version}
+                nextPageName={steps.wheels}
+                price={prices.legende}/>
+
             </div>
 
         </div>

@@ -7,7 +7,7 @@ const NextButton = (props) => {
     return (
         
         <div className='stepDiv col-5 animate__animated animate__slideInRight'>
-            <Link to={props.nextPath} >Prochaine étape : <span>{props.step}</span></Link>
+            <Link to={props.nextPath} >Prochaine étape : <span>{props.nextPageName}</span></Link>
         </div>
     )
 }

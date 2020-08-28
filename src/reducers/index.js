@@ -207,6 +207,7 @@ const initialState = {
   },
 
   step:{
+    landing: 'Accueil',
     version: 'Version',
     color: 'Couleur',
     wheels: 'Jantes & Roues',

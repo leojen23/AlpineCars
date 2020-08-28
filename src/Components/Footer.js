@@ -8,14 +8,20 @@ const Footer = (props) =>{
     return(
         <div className='container-fluid'>
             <div className="row footer">
-                <PreviousButton  version={props.version} step={props.step} previousPath={props.previousPath}/>
+                <PreviousButton  version={props.version} 
+                step={props.step} 
+                previousPath={props.previousPath}
+                previousPageName={props.previousPageName}/>
 
                 <div className = "stepSelected col-5 animate__animated animate__fadeIn animate__slower	3s'">
                     <h5 >Modèle selectionné : <small>{props.price} €</small></h5>
                     {/* <p className='animate__animated animate__flash animate__repeat-1	1animate__slower	3s'>à partir de {props.version.legende.initialPrice} €</p> */}
                 </div>
 
-                <NextButton   version={props.version} step={props.step} nextPath={props.nextPath}/>
+                <NextButton   version={props.version} 
+                step={props.step} 
+                nextPath={props.nextPath}
+                nextPageName={props.nextPageName}/>
         
             </div>
         </div>
