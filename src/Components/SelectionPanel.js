@@ -10,6 +10,7 @@ import React from 'react';
 const SelectionPanel = (props) => {
     
     const colorString = useSelector((state) => state.colorPanel)
+   
     const dispatch = useDispatch();
 
     const pickColor = () => dispatch({type:"PICK_COLOR", color:props.colorName});
@@ -39,3 +40,5 @@ const SelectionPanel = (props) => {
 }
 
 export default SelectionPanel;
+
+

@@ -1,4 +1,7 @@
 
+import React from 'react';
+
+
 import initialLegendePicture from "../images/configurateur/modele/selection/legende.png";
 import initialLegendePure from "../images/configurateur/modele/selection/pure.png";
 
@@ -124,10 +127,17 @@ import logoVolant from '../images/configurateur/equipements/categories/personnal
 import packCarbone from '../images/configurateur/equipements/categories/personnalisation interieure/pack-carbone.jpg'
 import pedaleAlu from '../images/configurateur/equipements/categories/personnalisation interieure/pedal-alu.jpg'
 import siegeChauffant from '../images/configurateur/equipements/categories/personnalisation interieure/siege-chauffant.jpg'
+import { Redirect } from "react-router-dom";
 
 
 const initialState = {
 
+  price: {
+    legende: 58500,
+    pure: 54700
+  },
+
+  
   carouselImage: [
     "/images/configurateur/modele/legende/modele_legende-couleur_blanc-jante_legende-1.jpg",
     "/images/configurateur/modele/legende/modele_legende-couleur_blanc-jante_legende-2.jpg",
@@ -153,16 +163,36 @@ const initialState = {
     "/images/configurateur/modele/legende/modele_legende-couleur_bleu-jante_legende-3.jpg",
     "/images/configurateur/modele/legende/modele_legende-couleur_bleu-jante_legende-4.jpg",
   ],
+  whiteImagesPure: [
+    "/images/configurateur/modele/pure/modele_pure-couleur_blanche-jante_pure-1.jpg",
+    "/images/configurateur/modele/pure/modele_pure-couleur_blanche-jante_pure-2.jpg",
+    "/images/configurateur/modele/pure/modele_pure-couleur_blanche-jante_pure-3.jpg",
+    "/images/configurateur/modele/pure/modele_pure-couleur_blanche-jante_pure-4.jpg",
+  ],
+  blackImagesPure: [
+    "/images/configurateur/modele/pure/modele_pure-couleur_noir-jante_pure-1.jpg",
+    "/images/configurateur/modele/pure/modele_pure-couleur_noir-jante_pure-2.jpg",
+    "/images/configurateur/modele/pure/modele_pure-couleur_noir-jante_pure-3.jpg",
+    "/images/configurateur/modele/pure/modele_pure-couleur_noir-jante_pure-4.jpg",
+  ],
 
-  path: {
-    version: '/VersionPage',
-    color: '/ColorPage',
-    wheels: '/WheelPage',
-    seats: '/SelleriePage',
-    equipements: '/EquipementPage',
-    accessories: "/AccessoiresPage",
-    recap: "/RecapPage"
-  },
+  blueImagesPure: [
+    "/images/configurateur/modele/pure/modele_pure-couleur_bleu-jante_pure-1.jpg",
+    "/images/configurateur/modele/pure/modele_pure-couleur_bleu-jante_pure-2.jpg",
+    "/images/configurateur/modele/pure/modele_pure-couleur_bleu-jante_pure-3.jpg",
+    "/images/configurateur/modele/pure/modele_pure-couleur_bleu-jante_pure-4.jpg",
+  ],
+
+  paths: [
+    '/',
+    '/VersionPage',
+    '/ColorPage',
+    '/WheelPage',
+    '/SelleriePage',
+    '/EquipementPage',
+    "/AccessoiresPage",
+    "/RecapPage"
+  ],
 
   headerTitle:{
 
@@ -412,13 +442,53 @@ const initialState = {
     
   };
  
-  
+
 function rootReducer(state = initialState, action) {
 
+  // if (action.type === "UPDATE_PRICE"){
 
-  if (action.type === "PICK_COLOR"){
+  //   if (action.price === 58500){
+     
+  //     return {...state,
+  //       version: {...state.version,
+  //         legend: {...state.version.legend,
+  //           initialPrice: 58500
+  //         } 
+  //       }
+  //      }
+  //   }
+  //   if (action.price === 54700){
+      
+  //     return {...state,
+  //       version: {...state.version,
+  //         legend: {...state.version.legend,
+  //           initialPrice: 54700
+  //         } 
+  //       }
+  //      }
+  //   }
+  // }
+  if (action.type === "PICK_VERSION"){
 
-    const color = [action.color]
+    if (action.version === "Legende"){
+      console.log(state)
+     
+      return {...state,
+        carouselImage: state.blackImages
+    }
+
+    }
+    if (action.version === "Pure"){
+      
+      return {...state,
+        carouselImage: state.whiteImagesPure
+    }
+
+    }
+    
+  }
+  
+  if (action.type === "PICK_COLOR"){ 
 
     if (action.color === "black"){
     
@@ -426,6 +496,7 @@ function rootReducer(state = initialState, action) {
           carouselImage: state.blackImages
       }
     }
+
     if (action.color === "white"){
      
       return {...state,

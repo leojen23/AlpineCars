@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import {BrowserRouter as Router,Switch,Route,Link} from "react-router-dom";
 
+import LandingPage from './Components/LandingPage';
 import VersionPage from './Components/VersionPage';
 import ColorPage from './Components/ColorPage';
 import WheelPage from './Components/WheelPage';
@@ -20,6 +21,9 @@ return (
     <div className='App'>
     
       <Switch>
+        <Route exact path="/">
+          <LandingPage />
+        </Route>
 
         <Route path="/VersionPage">
           <VersionPage />

@@ -11,10 +11,9 @@ const SelleriePage = (props) => {
             <Header />
 
             <h1>Choisir vos sièges</h1>
-                <Button variant="dark" href='/DesignPage'>Previous</Button>{' '}
+                <Button variant="dark" href='/ColorPage'>Previous</Button>{' '}
                 <Button variant="dark" href='/EquipementPage'>Suivant</Button>{' '}
           </div>
-        
     )
 }
 

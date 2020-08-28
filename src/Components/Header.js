@@ -9,7 +9,7 @@ const Header = (props) => {
         
       <Navbar variant="dark" className='main-header'>
         <div className='col-8 '>
-          <Navbar.Brand href="/versionPage">
+          <Navbar.Brand href='/'>
             <img
               src= {logo}
               className="d-inline-block align-top animate__animated animate__slideInLeft "
@@ -21,7 +21,7 @@ const Header = (props) => {
         </div>
 
         <div className='col-4 recapShortcut'>
-         <a href='./RecapPage'> <span>RECAPITULATIF</span></a>
+         <a href='/RecapPage'> <span>RECAPITULATIF</span></a>
         </div>
       </Navbar> 
     )
